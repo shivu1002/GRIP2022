@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+    overflow:auto;
+    opacity: 0.7; background-color: black;
+}
+
+#title {
+    font-family: sans-serif;
+    color:rgba(5, 190, 247, 0.89);
+    top: 10px;
+    left: 90px;
+    height: auto;
+    background: rgb(39, 39, 39);
+    padding: 30px 30px;
+   
+}
+footer{
+    color: white;
+    text-align: center;
+    padding-top: 5%;
+} 
+
+h2{
+    color: white;
+}
+h1{
+    color: white ;
+    font-weight: 1000;
+}

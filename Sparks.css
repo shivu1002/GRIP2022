@@ -1,0 +1,113 @@
+body{
+    background-color: gray;
+    overflow:auto;
+    padding: 0px;
+}
+#logo img{
+    
+    padding-right: 150px;
+    width: 150px;
+    cursor: pointer;
+ }
+ 
+#logo {
+    background-color: black;
+    text-align: left;
+    opacity: 0.85;
+    
+}
+
+#logo  ul{
+    float: right;
+    margin-right: 10px;
+    margin-left: 20%;
+    
+    
+}
+ 
+ul li a{
+    font-size: 50px;
+    color: white;
+    padding:10px;
+    text-decoration-line: none;
+}
+
+#logo ul li a:hover{
+    color: rgb(11, 137, 255);
+}
+
+#cont1 img {
+    width: 250px;
+    height: 250px;
+    opacity: 0.7;
+    margin-top: 75px;
+    margin-left: 220px;
+    padding-left: 20px;
+    list-style-type: none;
+   
+}
+   
+#photo ul{
+    float: left;
+    font-family: sans-serif;
+    width: 290px;
+    margin-left: 120px;
+    list-style-type: none;
+}
+
+#photo ul li a{
+    color: white;
+    padding: 15px;
+    list-style-type: none;
+    width: 290px;
+    margin-left: 60px;
+}
+
+#photo2 ul li a{
+    list-style-type: none;
+    background-color: black;
+    width: 120px;
+    opacity: 0.7;
+    margin-right: 160px;
+    padding:10px;
+    text-decoration-line: none;
+    float: center;
+}
+    
+#photo1 ul li a{
+    list-style-type: none;
+    background-color: black;
+    width: 120px;
+    opacity: 0.7;
+    margin-right: 100px;
+    margin-left: 40px;
+    padding:10px;
+    text-decoration-line: none;
+}
+
+#photo ul li a:hover{
+    color: rgb(7, 105, 235);
+}
+
+#photo1 ul{
+    float: left;
+    padding-left: 20px;    
+}
+
+#photo2 ul{
+    float: right;
+    padding-right: 280px;
+}
+footer{
+    color: rgb(3, 3, 3);
+    text-align: center;
+    padding-top: 15%;
+} 
+
+
+
+
+
+
+
+

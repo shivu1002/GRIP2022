@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="transfer.css">
+    <link rel="stylesheet"type="text/css"
+       href="transaction.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Send to : <span id="receiver_email"></span></h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <table>
+                            <tr>
+                                <td>
+                                    Enter Amount : <input type="number" id="amount_to_be_sent" min="0" value="0">
+                                </td>
+                                <td class="m-auto">
+                                    <small> <span><button class="btn btn-outline-primary m-2" onclick="calculate()">Send</button></span></small>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Large Modal-->
+        <!-- The Modal -->
+        <div class="modal fade" id="TransactionModal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Transaction History</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="table-responsive">
+                            <table class="table border" id="transaction_addition">
+                                <tr>
+                                    <th>Receiver</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //content -->
+        <div class="conatiner justify-content-center">
+            <center>
+                <table id="holder_information" class="m-auto">
+                    <tr>
+                        <th class="text-primary">Account holder's name : </th>
+                        <th>Shivani Joldapke</th>
+                    </tr>
+                    <tr>
+                        <th class="text-primary">Balance: </th>
+                        <th id="total_balance">100000</th>
+                    </tr>
+                    <tr class="text-center">
+                        <td colspan="4"><button class="btn btn-outline-primary pl-lg-0" data-toggle="modal" data-target="#TransactionModal">View transactions</button></td>
+                    </tr>
+                </table>
+            </center>
+        </div>
+        <div class="pt-3 table-responsive">
+            <table class="table border w-75 m-auto">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                    <th>Operation</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Olivia</td>
+                    <td>Olivia121@gmail.com</td>
+                    <td id="Olivia121@gmail.com_value">3000</td>
+                    <td data-label="#"><button value="Olivia121@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nisha</td>
+                    <td>Nisha123@gmail.com</td>
+                    <td id="Nisha123@gmail.com_value">5200</td>
+                    <td data-label="#"><button value="Nisha123@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Doe</td>
+                    <td>Doe232@gmail.com</td>
+                    <td id="Doe232@gmail.com_value">7000</td>
+                    <td data-label="#"><button value="Doe232@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Nidhi</td>
+                    <td>Nidhi23@gmail.com</td>
+                    <td id="Nidhi23@gmail.com_value">9000</td>
+                    <td data-label="#"><button value="Nidhi23@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Manik</td>
+                    <td>Manik@gmail.com</td>
+                    <td id="Manik@gmail.com_value">10000</td>
+                    <td data-label="#"><button value="Manik@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)"> Transact</button></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>shreyas</td>
+                    <td>shreyas@gmail.com</td>
+                    <td id="shreyas@gmail.com_value">4200</td>
+                    <td data-label="#"><button value="shreyas@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Jayesh</td>
+                    <td>jayesh02@gmail.com</td>
+                    <td id="jayesh02@gmail.com_value">2200</td>
+                    <td data-label="#"><button value="jayesh02@gmail.com" class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal" onclick="update_payment(this.value)">Transact</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript">
+    function update_payment(email_id) {
+        document.getElementById('receiver_email').innerHTML = email_id;
+    }
+
+    function calculate() {
+        let total_balance_row = document.getElementById('total_balance');
+        let total_balance = parseInt(total_balance_row.innerHTML);
+        let amount_to_be_sent = parseInt(document.getElementById("amount_to_be_sent").value);
+        if (amount_to_be_sent > total_balance)
+            alert("Less Balance");
+        else if (amount_to_be_sent <= 0 || Number.isNaN(amount_to_be_sent)) {
+            alert("Invalid Amount");
+        } else {
+
+            let receiver = document.getElementById('receiver_email').innerHTML;
+            let receiver_balance = parseInt(document.getElementById(receiver + "_value").innerHTML);
+            total_balance_row.innerHTML = total_balance - amount_to_be_sent;
+            document.getElementById(receiver + "_value").innerHTML = receiver_balance + amount_to_be_sent;
+            let date = new Date();
+            let transactions_table = document.getElementById('transaction_addition');
+            let row = transactions_table.insertRow(1);
+            let receiver_column = row.insertCell(0);
+            let amount_column = row.insertCell(1);
+            let date_column = row.insertCell(2);
+            receiver_column.innerHTML = receiver;
+            amount_column.innerHTML = amount_to_be_sent;
+            date_column.innerHTML = date;
+            alert("Sent Successfully");
+        }
+    }
+    </script>
+
+    <footer>
+        Copyright @2022 Shivani Joldapke
+    </footer>
+</body>
+
+</html>
